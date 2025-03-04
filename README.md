@@ -1,4 +1,5 @@
-# Project Submission for Proyek Analisis Data - Dicoding 
+# Project Submission for Proyek Analisis Data - Dicoding
+![5 Starts Rating](./src_repo/Proyek_Analisis_Data_Rating.png)
 ## Project Directory Structure
 - **dashboard** : Streamlit dashboard for data visualization
 - **data** : Data files for analysis
@@ -32,3 +33,6 @@ cd dashboard
 ``
 streamlit run dashboard.py
 ``
+
+## Dashboard Preview
+![Dashboard Preview](./src_repo/Dashboard.png)
