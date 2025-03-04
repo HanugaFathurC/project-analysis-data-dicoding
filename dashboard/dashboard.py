@@ -113,14 +113,25 @@ max_date = all_df['order_approved_at'].max()
 #
 with st.sidebar:
     st.image("https://media.datacamp.com/legacy/v1727712679/image_0dd3c66c35.png")
+    start_date = None
+    end_date = None
 
     # Take start_date and end_date from date_input
-    start_date, end_date = st.date_input(
-        label="Select Date Range",
-        min_value=min_date,
-        max_value=max_date,
-        value=[min_date, max_date]
-    )
+    try:
+        start_date, end_date = st.date_input(
+            label="Select Date Range",
+            min_value=min_date,
+            max_value=max_date,
+            value=[min_date, max_date]
+        )
+    except Exception as e:
+        if start_date is None or end_date is None:
+            st.warning("Please select a date range.")
+            st.stop()
+
+        if start_date > end_date:
+            st.warning("Please select a valid date range.")
+            st.stop()
 
     # Convert to datetime
     start_date = pd.to_datetime(start_date)
